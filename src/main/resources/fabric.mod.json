@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "spawn-weapon",
+	"version": "${version}",
+	"name": "spawn-weapon",
+	"description": "Adds paxxan's custom weapon",
+	"authors": [
+		"paxxan"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/spawn-weapon/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "net.paxxan.spawnweapon.SpawnWeapon"
+		],
+		"fabric-datagen": [
+			"net.paxxan.spawnweapon.SpawnWeaponDataGenerator"
+		],
+		"client": [
+			"net.paxxan.spawnweapon.SpawnWeaponClient"
+		]
+	},
+	"mixins": [
+		"spawn-weapon.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.3",
+		"minecraft": "~1.21.4",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
