@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
-	"id": "spawn-weapon",
+	"id": "spawn_katanas",
 	"version": "${version}",
-	"name": "spawn-weapon",
-	"description": "Adds paxxan's custom weapon",
+	"name": "spawn_katanas",
+	"description": "Adds paxxan's custom katanas",
 	"authors": [
 		"paxxan"
 	],
@@ -12,22 +12,19 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "MIT",
-	"icon": "assets/spawn-weapon/icon.png",
+	"icon": "assets/spawn_katanas/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-          "net.paxxan.spawnweapon.SpawnWeapon"
+          "net.paxxan.spawnkatanas.SpawnKatanas"
 		],
 		"fabric-datagen": [
-			"net.paxxan.spawnweapon.SpawnWeaponDataGenerator"
+			"net.paxxan.spawnkatanas.SpawnKatanasDataGenerator"
 		],
 		"client": [
-			"net.paxxan.spawnweapon.SpawnWeaponClient"
+			"net.paxxan.spawnkatanas.SpawnKatanasClient"
 		]
 	},
-	"mixins": [
-		"spawn-weapon.mixins.json"
-	],
 	"depends": {
 		"fabricloader": ">=0.17.3",
 		"minecraft": "~1.21.4",

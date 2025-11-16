@@ -1,0 +1,10 @@
+{
+  "item.spawn_katanas.fury_katana": "Fury",
+  "item.spawn_katanas.balance_katana": "Balance",
+
+  "item.spawn_katanas.fury_combo": "Charge",
+  "item.spawn_katanas.fury_combo.info": "Attack Charge: %1$s",
+
+  "death.attack.comboed": "%1$s was combo'ed",
+  "death.attack.comboed.player": "%1$s was combo'ed by %2$s"
+}
