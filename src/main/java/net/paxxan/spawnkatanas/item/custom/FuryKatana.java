@@ -12,6 +12,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.paxxan.spawnkatanas.damage_type.ModDamageTypes;
 import net.paxxan.spawnkatanas.component.ModComponents;
@@ -91,10 +92,15 @@ public class FuryKatana extends SwordItem {
     public ActionResult use(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = user.getMainHandStack();
         stack.damage(2, user);
-        var instance = new StatusEffectInstance(StatusEffects.SPEED, 100, 2, false, false, false);
+        var instance = new StatusEffectInstance(StatusEffects.SPEED, 100, 4, false, false, false);
         user.addStatusEffect(instance);
-        var instance2 = new StatusEffectInstance(StatusEffects.JUMP_BOOST, 100, 3, false, false, false);
+        var instance2 = new StatusEffectInstance(StatusEffects.JUMP_BOOST, 100, 1, false, false, false);
         user.addStatusEffect(instance2);
+        var instance3 = new StatusEffectInstance(StatusEffects.RESISTANCE, 20, 2, false, false, false);
+        user.addStatusEffect(instance3);
+        user.velocityModified = true;
+        Vec3d direction = user.getRotationVector().multiply(0.25);
+        user.addVelocity(direction);
         user.playSound(SoundEvents.ENTITY_EVOKER_CAST_SPELL, 2f, 0.7f);
         user.getItemCooldownManager().set(stack, 500);
         return super.use(world, user, hand);

@@ -55,8 +55,8 @@ public class BalanceKatana extends SwordItem {
         ItemStack stack = user.getMainHandStack();
         user.velocityModified = true;
         user.playSound(SoundEvents.ITEM_TRIDENT_RIPTIDE_1.value(), 2f, 0.7f);
-        user.getItemCooldownManager().set(stack, 100);
-        Vec3d direction = user.getRotationVector().multiply(2);
+        user.getItemCooldownManager().set(stack, 300);
+        Vec3d direction = user.getRotationVector().multiply(1.75);
         user.addVelocity(direction);
         stack.damage(2, user);
         return ActionResult.SUCCESS;
